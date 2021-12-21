@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ditadetian.moviecatalogue">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/logo"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MovieCatalogue"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        android:fullBackupOnly="true"
+        android:fullBackupContent="true">
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true"
+            android:noHistory="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.tvshows.DetailTvShowActivity"
+            android:exported="true"
+            android:parentActivityName=".ui.home.HomeActivity"
+            tools:ignore="DuplicateActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.home.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ui.movies.DetailMovieActivity"
+            android:exported="true"
+            android:parentActivityName=".ui.home.HomeActivity"
+            tools:ignore="DuplicateActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.home.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="true"/>
+    </application>
+
+</manifest>

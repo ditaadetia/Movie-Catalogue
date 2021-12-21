@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/movie"
+    app:cardCornerRadius="8dp"
+    android:elevation="8dp"
+    app:cardMaxElevation="8dp"
+    android:layout_marginVertical="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="4dp">
+
+        <com.github.siyamed.shapeimageview.RoundedImageView
+            android:id="@+id/riv_item_poster"
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/ic_drawable_poster"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:siRadius="4dp" />
+
+        <TextView
+            android:id="@+id/tv_item_movie_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:text="@string/movie_name"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/riv_item_poster"
+            app:layout_constraintTop_toTopOf="@+id/riv_item_poster" />
+
+        <TextView
+            android:id="@+id/tv_item_overview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/overview"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/iv_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/riv_item_poster"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_movie_name" />
+
+        <ImageView
+            android:id="@+id/iv_date"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_baseline_calendar_today_24"
+            app:layout_constraintBottom_toTopOf="@+id/age"
+            app:layout_constraintStart_toEndOf="@+id/riv_item_poster"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_item_release"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/release_date"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/age"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_date"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_overview" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/age"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="4dp"
+            android:textSize="12sp"
+            app:cardBackgroundColor="@color/tagColor"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/riv_item_poster">
+
+            <TextView
+                android:id="@+id/tv_item_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="@string/age"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
